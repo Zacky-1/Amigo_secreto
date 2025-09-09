@@ -1,14 +1,21 @@
+/* ========================================================
+   VARIABLES DE COLOR - PALETA PERSONALIZADA
+======================================================== */
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-primary: #7B0F1D;
+    --color-secondary: #F8E9E9;
+    --color-tertiary: #D4AFCD;
+    --color-button: #9D2235;
+    --color-button-hover: #7B0F1D;
+    --color-text: #2D112A;
     --color-white: #FFFFFF;
+    --color-delete: #C44536;
+    --color-delete-hover: #9D2235;
 }
 
-/* Estilos generales */
+/* ========================================================
+   RESETEO Y CONFIGURACIÓN GENERAL
+======================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -17,146 +24,287 @@
 
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, #7B0F1D 0%, #4A0A12 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter', sans-serif;
 }
 
+/* ========================================================
+   ESTRUCTURA PRINCIPAL DEL CONTENEDOR
+======================================================== */
 .main-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: 90vh;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-/* Banner */
+/* ========================================================
+   BANNER SUPERIOR (HEADER)
+======================================================== */
 .header-banner {
     flex: 40%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
+    background: linear-gradient(135deg, #9D2235 0%, #7B0F1D 100%);
+    color: var(--color-white);
 }
 
-/* Sección de entrada */
+/* ========================================================
+   SECCIÓN DE ENTRADA (INPUTS Y LISTA)
+======================================================== */
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
+    border-top: 2px solid var(--color-primary);
+    border-radius: 25px 25px 0 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 30px 20px;
     width: 100%;
+    height: 60vh;
+    overflow: hidden;
 }
 
-/* Títulos */
+/* ========================================================
+   ESTILOS DE LOS TÍTULOS
+======================================================== */
 .main-title {
-    font-size: 48px;
+    font-size: 3rem;
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
 }
 
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
+    font-family: "Merriweather", serif;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin: 10px 0;
+    margin: 20px 0;
     text-align: center;
 }
 
-/* Contenedores de entrada y botón */
+/* ========================================================
+   CONTENEDOR DEL INPUT Y BOTÓN “AÑADIR”
+======================================================== */
 .input-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 600px;
-    margin-top: 20px;
-}
-
-.input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-}
-
-.button-add:hover {
-    background-color: #a1a1a1;
-}
-
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
     margin: 20px 0;
 }
 
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
+/* INPUT DE NOMBRE */
+.input-name {
+    width: 70%;
+    padding: 15px 20px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+    background: var(--color-white);
+    font-family: "Inter", sans-serif;
 }
 
-/* Botón de sortear título */
+.input-name:focus {
+    outline: none;
+    border-color: var(--color-button);
+    box-shadow: 0 0 0 3px rgba(157, 34, 53, 0.2);
+}
+
+/* BOTÓN AÑADIR */
+.button-add {
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   CONTENEDOR DE LA LISTA DE NOMBRES
+======================================================== */
+.name-list {
+    overflow-y: auto;
+    max-height: 220px; /* Más alto para mejor visualización */
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-white);
+    border-radius: 15px;
+    border: 2px solid var(--color-tertiary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ESTILO DE CADA ÍTEM DE LA LISTA */
+.name-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+/* DIV DEL NOMBRE DENTRO DEL ÍTEM */
+.name-list li div {
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* BOTÓN ELIMINAR */
+.name-list li button {
+    background-color: var(--color-delete);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.name-list li button:hover {
+    background-color: var(--color-delete-hover);
+}
+
+/* ========================================================
+   CONTENEDOR DEL BOTÓN “SORTEAR AMIGO”
+======================================================== */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; /* Separación solicitada entre lista y botón */
+}
+
+/* BOTÓN DE SORTEO */
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 10px 40px;
+    justify-content: center;
+    gap: 15px;
+    width: 250px;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, var(--color-button) 0%, var(--color-button-hover) 100%);
     color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.button-draw:active {
+    transform: translateY(-1px);
+}
+
+.button-draw img {
+    margin-right: 10px;
+}
+
+/* ========================================================
+   ESTILOS PARA MENSAJES Y ESTADOS ESPECIALES
+======================================================== */
+.empty-message {
+    text-align: center;
+    color: var(--color-text);
+    font-style: italic;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+.winner {
+    animation: fadeIn 0.5s ease, pulse 2s infinite;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+    color: var(--color-text) !important;
+}
+
+/* ========================================================
+   ANIMACIONES
+======================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ========================================================
+   DISEÑO RESPONSIVO PARA PANTALLAS PEQUEÑAS
+======================================================== */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .input-name,
+    .button-add,
+    .button-draw {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .button-draw {
+        justify-content: center;
+    }
 }

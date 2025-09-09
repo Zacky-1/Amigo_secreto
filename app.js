@@ -1,6 +1,7 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 //Variables
 let amigos = [];
+const nombreContainer = document.createElement('div');
+nombreContainer.textContent = amigos[i];
 
 function agregarAmigo() {
     // 1. Capturar el valor del campo de entrada
